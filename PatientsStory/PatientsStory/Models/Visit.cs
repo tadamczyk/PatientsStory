@@ -7,12 +7,9 @@ namespace PatientsStory.Models
     [Table("VISIT")]
     public class Visit
     {
-        [PrimaryKey]
-        [AutoIncrement]
-        public int Id { get; set; }
+        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
 
-        [ForeignKey(typeof(Patient))]
-        public int PatientId { get; set; }
+        [ForeignKey(typeof(Patient))] public int PatientId { get; set; }
 
         public DateTime DateOfVisit { get; set; }
 
