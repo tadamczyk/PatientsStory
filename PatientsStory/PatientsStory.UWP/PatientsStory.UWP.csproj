@@ -104,6 +104,21 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\icon.altform-unplated_targetsize-16.png" />
+    <Content Include="Assets\icon.altform-unplated_targetsize-24.png" />
+    <Content Include="Assets\icon.altform-unplated_targetsize-256.png" />
+    <Content Include="Assets\icon.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\icon.altform-unplated_targetsize-48.png" />
+    <Content Include="Assets\icon.scale-100.png" />
+    <Content Include="Assets\icon.scale-125.png" />
+    <Content Include="Assets\icon.scale-150.png" />
+    <Content Include="Assets\icon.scale-200.png" />
+    <Content Include="Assets\icon.scale-400.png" />
+    <Content Include="Assets\icon.targetsize-16.png" />
+    <Content Include="Assets\icon.targetsize-24.png" />
+    <Content Include="Assets\icon.targetsize-256.png" />
+    <Content Include="Assets\icon.targetsize-32.png" />
+    <Content Include="Assets\icon.targetsize-48.png" />
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />
     <Content Include="Assets\LargeTile.scale-400.png" />

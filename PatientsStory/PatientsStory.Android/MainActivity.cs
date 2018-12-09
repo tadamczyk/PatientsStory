@@ -6,7 +6,8 @@ using Xamarin.Forms.Platform.Android;
 
 namespace PatientsStory.Droid
 {
-    [Activity(Label = "PatientsStory", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
+    [Activity(Label = "PatientsStory", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true,
+        ScreenOrientation = ScreenOrientation.Portrait,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : FormsAppCompatActivity
     {
@@ -14,7 +15,6 @@ namespace PatientsStory.Droid
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
-
             base.OnCreate(savedInstanceState);
             Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
