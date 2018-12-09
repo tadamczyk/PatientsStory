@@ -7,7 +7,9 @@ namespace PatientsStory.Models
     [Table("PATIENT")]
     public class Patient
     {
-        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
+        [PrimaryKey]
+        [AutoIncrement]
+        public int Id { get; set; }
 
         public string FirstName { get; set; }
 
