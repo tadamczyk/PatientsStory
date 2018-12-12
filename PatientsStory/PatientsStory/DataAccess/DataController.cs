@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using PatientsStory.DataAccess.Interfaces;
 using PatientsStory.Models;
 using SQLite;
 
 namespace PatientsStory.DataAccess
 {
-    public class DataController
+    public class DataController : IDataController
     {
         private readonly SQLiteAsyncConnection _database;
 

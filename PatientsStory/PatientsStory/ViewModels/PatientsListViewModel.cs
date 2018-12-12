@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using PatientsStory.Models;
+using PatientsStory.Views;
 using Xamarin.Forms;
 
 namespace PatientsStory.ViewModels
@@ -52,7 +53,15 @@ namespace PatientsStory.ViewModels
 
         public Command AddPatient
         {
-            get { return new Command(async () => { }); }
+            get
+            {
+                return new Command(async () =>
+                {
+                    var patientAddViewModel = new PatientAddViewModel();
+                    var patientAddPage = new PatientAddPage(patientAddViewModel);
+                    await Application.Current.MainPage.Navigation.PushAsync(patientAddPage);
+                });
+            }
         }
 
         public Command SelectPatient

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
+             x:Class="PatientsStory.Views.PatientAddPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModels:PatientAddViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand">
+        <Label Text="Historia pacjentów"
+               FontSize="Large"
+               TextColor="White"
+               BackgroundColor="Black"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               HeightRequest="40"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start" />
+        <StackLayout Padding="10"
+                     VerticalOptions="StartAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="Imię:"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Entry Text="{Binding FirstName}"
+                       Placeholder="np. Adam"
+                       Grid.Row="0"
+                       Grid.Column="1" />
+                <Label Text="Nazwisko:"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Entry Text="{Binding LastName}"
+                       Placeholder="np. Adamczyk"
+                       Grid.Row="1"
+                       Grid.Column="1" />
+                <Label Text="PESEL:"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Entry Text="{Binding PESEL}"
+                       Placeholder="np. 90010112345"
+                       Grid.Row="2"
+                       Grid.Column="1" />
+            </Grid>
+        </StackLayout>
+        <StackLayout VerticalOptions="End">
+            <Button Command="{Binding SavePatient, Mode=TwoWay}"
+                    Text="Zapisz pacjenta"
+                    TextColor="White"
+                    BackgroundColor="Green"
+                    HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

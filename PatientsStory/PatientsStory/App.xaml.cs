@@ -12,7 +12,7 @@ namespace PatientsStory
 {
     public partial class App : Application
     {
-        private static DataController _dataController;
+        private static IDataController _dataController;
         private static DateTime _sleepStart;
         private readonly TimeSpan _sleepLimit;
 
@@ -23,9 +23,9 @@ namespace PatientsStory
             _sleepLimit = TimeSpan.FromMinutes(30);
         }
 
-        public static DataController DataController => _dataController ?? (_dataController =
-                                                           new DataController(DependencyService.Get<ILocalFileHelper>()
-                                                               .GetLocalFilePath("database.db3")));
+        public static IDataController DataController => _dataController ?? (_dataController =
+                                                            new DataController(DependencyService.Get<ILocalFileHelper>()
+                                                                .GetLocalFilePath("database.db3")));
 
         protected override void OnSleep()
         {
