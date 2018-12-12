@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
+             x:Class="PatientsStory.Views.PatientDetailsPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.BindingContext>
+        <viewModels:PatientDetailsViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout HorizontalOptions="FillAndExpand">
+        <Label Text="Historia pacjentów"
+               FontSize="Large"
+               TextColor="White"
+               BackgroundColor="Black"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               HeightRequest="40"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start" />
+        <Label Text="{Binding FullName}"
+               FontSize="Medium"
+               TextColor="Black"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start" />
+        <StackLayout Padding="10"
+                     VerticalOptions="StartAndExpand">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="PESEL:"
+                       FontSize="Micro"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Label Text="{Binding PESEL}"
+                       TextColor="Black"
+                       Grid.Row="0"
+                       Grid.Column="1" />
+                <Label Text="Wiek:"
+                       FontSize="Micro"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Label Text="{Binding Age}"
+                       TextColor="Black"
+                       Grid.Row="1"
+                       Grid.Column="1" />
+                <Label Text="Płeć:"
+                       FontSize="Micro"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Label Text="{Binding Gender}"
+                       TextColor="Black"
+                       Grid.Row="2"
+                       Grid.Column="1" />
+            </Grid>
+        </StackLayout>
+        <!--<StackLayout VerticalOptions="End">
+                <Button Command="{Binding EditPatient, Mode=TwoWay}"
+                    Text="Edytuj pacjenta"
+                    TextColor="White"
+                    BackgroundColor="GreenYellow"
+                    CornerRadius="8"
+                    HeightRequest="40" />
+                <Button Command="{Binding DeletePatient, Mode=TwoWay}"
+                    Text="Usuń pacjenta"
+                    TextColor="White"
+                    BackgroundColor="Red"
+                    CornerRadius="8"
+                    HeightRequest="40" />
+                <Button Command="{Binding ShowHistory, Mode=TwoWay}"
+                    Text="Wyświetl historię"
+                    TextColor="White"
+                    BackgroundColor="MediumSpringGreen"
+                    CornerRadius="8"
+                    HeightRequest="40" />
+                <Button Command="{Binding AddVisit, Mode=TwoWay}"
+                    Text="Dodaj wizytę"
+                    TextColor="White"
+                    BackgroundColor="Green" />
+            </StackLayout>-->
+    </StackLayout>
+</ContentPage>

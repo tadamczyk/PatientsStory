@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using PatientsStory.Helpers;
 using PatientsStory.Models;
 using PatientsStory.Views;
 using Xamarin.Forms;
@@ -66,7 +67,22 @@ namespace PatientsStory.ViewModels
 
         public Command SelectPatient
         {
-            get { return new Command(async () => { }); }
+            get
+            {
+                return new Command(async () =>
+                {
+                    var patientDetailsViewModel = new PatientDetailsViewModel
+                    {
+                        Id = _selectedPatient.Id,
+                        FullName = _selectedPatient.FullName,
+                        PESEL = _selectedPatient.PESEL,
+                        Age = PatientHelper.GetAgeFromPesel(_selectedPatient.PESEL).ToString(),
+                        Gender = PatientHelper.GetGenderFromPesel(_selectedPatient.PESEL)
+                    };
+                    var patientDetailsPage = new PatientDetailsPage(patientDetailsViewModel);
+                    await Application.Current.MainPage.Navigation.PushAsync(patientDetailsPage);
+                });
+            }
         }
 
         public Command RefreshCommand
