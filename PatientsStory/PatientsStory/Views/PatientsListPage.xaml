@@ -3,6 +3,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
+             xmlns:constants="clr-namespace:PatientsStory.Constants"
              x:Class="PatientsStory.Views.PatientsListPage"
              NavigationPage.HasNavigationBar="False">
 
@@ -39,7 +40,7 @@
                     <TapGestureRecognizer Command="{Binding RefreshCommand}" />
                 </Image.GestureRecognizers>
             </Image>
-            <Label Text="Historia pacjentów"
+            <Label Text="{x:Static constants:LabelsConstants.APP_NAME}"
                    FontSize="Large"
                    TextColor="White"
                    BackgroundColor="Black"
@@ -90,7 +91,7 @@
 
         <StackLayout VerticalOptions="End">
             <Button Command="{Binding AddPatient, Mode=TwoWay}"
-                    Text="Dodaj pacjenta"
+                    Text="{x:Static constants:LabelsConstants.ADD_PATIENT}"
                     TextColor="White"
                     BackgroundColor="Green" />
         </StackLayout>

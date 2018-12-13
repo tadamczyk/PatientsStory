@@ -3,15 +3,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
+             xmlns:constants="clr-namespace:PatientsStory.Constants"
              x:Class="PatientsStory.Views.PatientDetailsPage"
              NavigationPage.HasNavigationBar="False">
+
+    <!--#region BindingContext -->
 
     <ContentPage.BindingContext>
         <viewModels:PatientDetailsViewModel />
     </ContentPage.BindingContext>
 
+    <!--#endregion -->
+
     <StackLayout HorizontalOptions="FillAndExpand">
-        <Label Text="Historia pacjentów"
+
+        <!--#region TopPanel -->
+
+        <Label Text="{x:Static constants:LabelsConstants.APP_NAME}"
                FontSize="Large"
                TextColor="White"
                BackgroundColor="Black"
@@ -25,14 +33,24 @@
                TextColor="Black"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Start" />
+
+        <!--#endregion -->
+
+        <!--#region FieldsOfPatient -->
+
         <StackLayout Padding="10"
                      VerticalOptions="StartAndExpand">
             <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="PESEL:"
+                <Label Text="{x:Static constants:LabelsConstants.PATIENT_PESEL}"
                        FontSize="Micro"
                        Grid.Row="0"
                        Grid.Column="0"
@@ -42,7 +60,7 @@
                        TextColor="Black"
                        Grid.Row="0"
                        Grid.Column="1" />
-                <Label Text="Wiek:"
+                <Label Text="{x:Static constants:LabelsConstants.PATIENT_AGE}"
                        FontSize="Micro"
                        Grid.Row="1"
                        Grid.Column="0"
@@ -52,7 +70,7 @@
                        TextColor="Black"
                        Grid.Row="1"
                        Grid.Column="1" />
-                <Label Text="Płeć:"
+                <Label Text="{x:Static constants:LabelsConstants.PATIENT_GENDER}"
                        FontSize="Micro"
                        Grid.Row="2"
                        Grid.Column="0"
@@ -64,29 +82,36 @@
                        Grid.Column="1" />
             </Grid>
         </StackLayout>
-        <!--<StackLayout VerticalOptions="End">
-                <Button Command="{Binding EditPatient, Mode=TwoWay}"
-                    Text="Edytuj pacjenta"
+
+        <!--#endregion -->
+
+        <!--#region Buttons -->
+
+        <StackLayout VerticalOptions="End">
+            <Button Command="{Binding EditPatient, Mode=TwoWay}"
+                    Text="{x:Static constants:LabelsConstants.EDIT_PATIENT}"
                     TextColor="White"
                     BackgroundColor="GreenYellow"
                     CornerRadius="8"
                     HeightRequest="40" />
-                <Button Command="{Binding DeletePatient, Mode=TwoWay}"
-                    Text="Usuń pacjenta"
+            <Button Command="{Binding DeletePatient, Mode=TwoWay}"
+                    Text="{x:Static constants:LabelsConstants.DELETE_PATIENT}"
                     TextColor="White"
                     BackgroundColor="Red"
                     CornerRadius="8"
                     HeightRequest="40" />
-                <Button Command="{Binding ShowHistory, Mode=TwoWay}"
-                    Text="Wyświetl historię"
+            <Button Command="{Binding ShowHistory, Mode=TwoWay}"
+                    Text="{x:Static constants:LabelsConstants.SHOW_HISTORY}"
                     TextColor="White"
                     BackgroundColor="MediumSpringGreen"
                     CornerRadius="8"
                     HeightRequest="40" />
-                <Button Command="{Binding AddVisit, Mode=TwoWay}"
-                    Text="Dodaj wizytę"
+            <Button Command="{Binding AddVisit, Mode=TwoWay}"
+                    Text="{x:Static constants:LabelsConstants.ADD_VISIT}"
                     TextColor="White"
                     BackgroundColor="Green" />
-            </StackLayout>-->
+        </StackLayout>
+
+        <!--#endregion -->
     </StackLayout>
 </ContentPage>

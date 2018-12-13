@@ -4,6 +4,16 @@ namespace PatientsStory.Helpers
 {
     public class PatientHelper
     {
+        public static string GetFirstName(string fullName)
+        {
+            return fullName.Split(' ')[1];
+        }
+
+        public static string GetLastName(string fullName)
+        {
+            return fullName.Split(' ')[0];
+        }
+
         public static string GetFullName(string firstName, string lastName)
         {
             return string.Concat(lastName, " ", firstName);
