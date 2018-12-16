@@ -30,8 +30,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="1" />
             </Grid.RowDefinitions>
-            <Image Source="refresh.png"
-                   BackgroundColor="Black"
+            <Image BackgroundColor="Black"
                    Grid.Row="1"
                    Grid.Column="1"
                    HorizontalOptions="FillAndExpand"
@@ -39,6 +38,16 @@
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding RefreshCommand}" />
                 </Image.GestureRecognizers>
+                <Image.Source>
+                    <OnPlatform x:TypeArguments="ImageSource">
+                        <OnPlatform.WinPhone>
+                            <FileImageSource File="Assets/refresh.png"/>
+                        </OnPlatform.WinPhone>
+                        <OnPlatform.Android>
+                            <FileImageSource File="refresh.png"/>
+                        </OnPlatform.Android>
+                    </OnPlatform>
+                </Image.Source>
             </Image>
             <Label Text="{x:Static constants:LabelsConstants.APP_NAME}"
                    FontSize="Large"
