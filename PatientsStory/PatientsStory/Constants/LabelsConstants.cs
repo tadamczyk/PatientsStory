@@ -17,6 +17,7 @@
 
         public const string ADD_VISIT = "Dodaj wizytę";
         public const string SHOW_HISTORY = "Wyświetl historię";
+        public const string SAVE_VISIT = "Zapisz wizytę";
 
         #endregion
 
@@ -27,6 +28,11 @@
         public const string PATIENT_PESEL = "PESEL";
         public const string PATIENT_AGE = "Wiek";
         public const string PATIENT_GENDER = "Płeć";
+
+        public const string VISIT_DATE = "Data wizyty";
+        public const string VISIT_DIAGNOSE = "Diagnoza";
+        public const string VISIT_INDICATIONS = "Zalecenia";
+        public const string VISIT_PRICE = "Cena";
 
         #endregion
     }

@@ -104,5 +104,22 @@ namespace PatientsStory.ViewModels
                 });
             }
         }
+
+        public Command AddVisit
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var visitAddViewModel = new VisitAddViewModel
+                    {
+                        PatientId = Id,
+                        PatientFullName = FullName
+                    };
+                    var visitAddPage = new VisitAddPage(visitAddViewModel);
+                    await Application.Current.MainPage.Navigation.PushAsync(visitAddPage);
+                });
+            }
+        }
     }
 }

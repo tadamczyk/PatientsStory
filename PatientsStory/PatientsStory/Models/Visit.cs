@@ -7,6 +7,20 @@ namespace PatientsStory.Models
     [Table("VISIT")]
     public class Visit
     {
+        public Visit(int id, int patientId, DateTime dateOfVisit, string diagnose, string indications, decimal price)
+        {
+            Id = id;
+            PatientId = patientId;
+            DateOfVisit = dateOfVisit;
+            Diagnose = diagnose;
+            Indications = indications;
+            Price = price;
+        }
+
+        public Visit()
+        {
+        }
+
         [PrimaryKey] [AutoIncrement] public int Id { get; set; }
 
         [ForeignKey(typeof(Patient))] public int PatientId { get; set; }

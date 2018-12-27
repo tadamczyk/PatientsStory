@@ -41,10 +41,10 @@
                 <Image.Source>
                     <OnPlatform x:TypeArguments="ImageSource">
                         <OnPlatform.WinPhone>
-                            <FileImageSource File="Assets/refresh.png"/>
+                            <FileImageSource File="Assets/refresh.png" />
                         </OnPlatform.WinPhone>
                         <OnPlatform.Android>
-                            <FileImageSource File="refresh.png"/>
+                            <FileImageSource File="refresh.png" />
                         </OnPlatform.Android>
                     </OnPlatform>
                 </Image.Source>

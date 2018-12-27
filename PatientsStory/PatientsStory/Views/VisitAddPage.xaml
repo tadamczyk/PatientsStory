@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
+             xmlns:constants="clr-namespace:PatientsStory.Constants"
+             x:Class="PatientsStory.Views.VisitAddPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <!--#region BindingContext -->
+
+    <ContentPage.BindingContext>
+        <viewModels:VisitAddViewModel />
+    </ContentPage.BindingContext>
+
+    <!--#endregion -->
+
+    <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand">
+
+        <!--#region TopPanel -->
+
+        <Label Text="{x:Static constants:LabelsConstants.APP_NAME}"
+               FontSize="Large"
+               TextColor="White"
+               BackgroundColor="Black"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               HeightRequest="40"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start" />
+
+        <!--#endregion -->
+
+        <!--#region FieldsOfVisit -->
+
+        <StackLayout Padding="10"
+                     VerticalOptions="StartAndExpand">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label Text="{x:Static constants:LabelsConstants.VISIT_DATE}"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <DatePicker Date="{Binding DateOfVisit}"
+                            MaximumDate="{Binding MaxDateOfVisit}"
+                            Format="yyyy-MM-dd"
+                            Grid.Row="0"
+                            Grid.Column="1" />
+                <Label Text="{x:Static constants:LabelsConstants.VISIT_DIAGNOSE}"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Entry Text="{Binding Diagnose}"
+                       Placeholder="np. Grypa"
+                       Grid.Row="1"
+                       Grid.Column="1" />
+                <Label Text="{x:Static constants:LabelsConstants.VISIT_INDICATIONS}"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Entry Text="{Binding Indications}"
+                       Placeholder="np. Brak"
+                       Grid.Row="2"
+                       Grid.Column="1" />
+                <Label Text="{x:Static constants:LabelsConstants.VISIT_PRICE}"
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Entry Text="{Binding Price}"
+                       Placeholder="np. 100"
+                       Grid.Row="3"
+                       Grid.Column="1" />
+            </Grid>
+        </StackLayout>
+
+        <!--#endregion -->
+
+        <!--#region SaveVisit -->
+
+        <StackLayout VerticalOptions="End">
+            <Button Command="{Binding SaveVisit, Mode=TwoWay}"
+                    Text="{x:Static constants:LabelsConstants.SAVE_VISIT}"
+                    TextColor="White"
+                    BackgroundColor="Green"
+                    HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+
+        <!--#endregion -->
+
+    </StackLayout>
+</ContentPage>
