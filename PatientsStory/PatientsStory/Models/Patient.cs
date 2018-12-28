@@ -22,15 +22,15 @@ namespace PatientsStory.Models
         {
         }
 
-        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
+        [PrimaryKey] [AutoIncrement] [NotNull] public int Id { get; set; }
 
-        public string FirstName { get; set; }
+        [NotNull] public string FirstName { get; set; }
 
-        public string LastName { get; set; }
+        [NotNull] public string LastName { get; set; }
 
-        public string PESEL { get; set; }
+        [MaxLength(11)] [NotNull] public string PESEL { get; set; }
 
-        public string FullName { get; set; }
+        [NotNull] public string FullName { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Visit> Visits { get; set; }

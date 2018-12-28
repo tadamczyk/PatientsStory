@@ -1,4 +1,7 @@
-﻿using PatientsStory.Helpers;
+﻿using System.Collections.ObjectModel;
+using System.Threading.Tasks;
+using PatientsStory.Helpers;
+using PatientsStory.Models;
 using PatientsStory.Views;
 using Xamarin.Forms;
 
@@ -105,6 +108,19 @@ namespace PatientsStory.ViewModels
             }
         }
 
+        public Command ShowHistory
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var visitsListViewModel = await InitVisitsListViewModel();
+                    var visitsListPage = new VisitsListPage(visitsListViewModel);
+                    await Application.Current.MainPage.Navigation.PushAsync(visitsListPage);
+                });
+            }
+        }
+
         public Command AddVisit
         {
             get
@@ -120,6 +136,16 @@ namespace PatientsStory.ViewModels
                     await Application.Current.MainPage.Navigation.PushAsync(visitAddPage);
                 });
             }
+        }
+
+        private async Task<VisitsListViewModel> InitVisitsListViewModel()
+        {
+            var visitsListViewModel = new VisitsListViewModel();
+            var visits = await App.DataController.GetVisitsAsync(Id);
+            visitsListViewModel.VisitsList = new ObservableCollection<Visit>(visits);
+            visitsListViewModel.PatientId = Id;
+            visitsListViewModel.PatientFullName = FullName;
+            return visitsListViewModel;
         }
     }
 }

@@ -21,17 +21,19 @@ namespace PatientsStory.Models
         {
         }
 
-        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
+        [PrimaryKey] [AutoIncrement] [NotNull] public int Id { get; set; }
 
-        [ForeignKey(typeof(Patient))] public int PatientId { get; set; }
+        [ForeignKey(typeof(Patient))]
+        [NotNull]
+        public int PatientId { get; set; }
 
-        public DateTime DateOfVisit { get; set; }
+        [NotNull] public DateTime DateOfVisit { get; set; }
 
-        public string Diagnose { get; set; }
+        [NotNull] public string Diagnose { get; set; }
 
         public string Indications { get; set; }
 
-        public decimal Price { get; set; }
+        [NotNull] public decimal Price { get; set; }
 
         [ManyToOne(CascadeOperations = CascadeOperation.CascadeRead)]
         public Patient Patient { get; set; }
