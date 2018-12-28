@@ -25,7 +25,7 @@ namespace PatientsStory
 
         public static IDataController DataController => _dataController ?? (_dataController =
                                                             new DataController(DependencyService.Get<ILocalFileHelper>()
-                                                                .GetLocalFilePath("database.db3")));
+                                                                                   .GetLocalFilePath("database.db3")));
 
         protected override void OnSleep()
         {
@@ -34,7 +34,10 @@ namespace PatientsStory
 
         protected override void OnResume()
         {
-            if (DateTime.Now - _sleepStart > _sleepLimit) MessagingCenter.Send(this, "The session has expired.");
+            if (DateTime.Now - _sleepStart > _sleepLimit)
+            {
+                MessagingCenter.Send(this, "The session has expired.");
+            }
         }
     }
 }

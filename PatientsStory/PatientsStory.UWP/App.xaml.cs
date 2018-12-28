@@ -51,7 +51,11 @@ namespace PatientsStory.UWP
                 Window.Current.Content = rootFrame;
             }
 
-            if (rootFrame.Content == null) rootFrame.Navigate(typeof(MainPage), e.Arguments);
+            if (rootFrame.Content == null)
+            {
+                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+            }
+
             // Ensure the current window is active
             Window.Current.Activate();
         }

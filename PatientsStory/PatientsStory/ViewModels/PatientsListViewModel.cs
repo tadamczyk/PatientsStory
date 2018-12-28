@@ -25,7 +25,11 @@ namespace PatientsStory.ViewModels
             set
             {
                 _selectedPatient = value;
-                if (_selectedPatient == null) return;
+                if (_selectedPatient == null)
+                {
+                    return;
+                }
+
                 SelectPatient.Execute(_selectedPatient);
                 _selectedPatient = null;
                 OnPropertyChanged("SelectedPatient");

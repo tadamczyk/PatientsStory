@@ -94,7 +94,7 @@ namespace PatientsStory.ViewModels
                 {
                     var answer =
                         await Application.Current.MainPage.DisplayAlert("Usunąć?", "Czy na pewno chcesz usunąć?", "Tak",
-                            "Nie");
+                                                                        "Nie");
                     if (answer)
                     {
                         var patient = await App.DataController.GetPatientAsync(Id);

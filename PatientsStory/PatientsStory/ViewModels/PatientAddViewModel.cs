@@ -62,7 +62,7 @@ namespace PatientsStory.ViewModels
                     var patient = new Patient(Id, FirstName, LastName, PESEL);
                     await App.DataController.SavePatientAsync(patient);
                     await Application.Current.MainPage.DisplayAlert("Zrobione!", "Dodano/zaktualizowano pacjenta!",
-                        "Ok");
+                                                                    "Ok");
                     await Application.Current.MainPage.Navigation.PopToRootAsync();
                 });
             }
