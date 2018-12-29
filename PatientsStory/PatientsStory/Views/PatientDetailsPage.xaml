@@ -88,22 +88,33 @@
         <!--#region Buttons -->
 
         <StackLayout VerticalOptions="End">
-            <Button Command="{Binding EditPatient, Mode=TwoWay}"
-                    Text="{x:Static constants:LabelsConstants.EDIT_PATIENT}"
-                    TextColor="White"
-                    BackgroundColor="GreenYellow"
-                    CornerRadius="8"
-                    HeightRequest="40" />
-            <Button Command="{Binding DeletePatient, Mode=TwoWay}"
-                    Text="{x:Static constants:LabelsConstants.DELETE_PATIENT}"
-                    TextColor="White"
-                    BackgroundColor="Red"
-                    CornerRadius="8"
-                    HeightRequest="40" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Command="{Binding EditPatient, Mode=TwoWay}"
+                        Text="{x:Static constants:LabelsConstants.EDIT_PATIENT}"
+                        TextColor="White"
+                        BackgroundColor="Orange"
+                        CornerRadius="8"
+                        HeightRequest="40"
+                        Grid.Row="0"
+                        Grid.Column="0" />
+                <Button Command="{Binding DeletePatient, Mode=TwoWay}"
+                        Text="{x:Static constants:LabelsConstants.DELETE_PATIENT}"
+                        TextColor="White"
+                        BackgroundColor="Crimson"
+                        CornerRadius="8"
+                        HeightRequest="40"
+                        Grid.Row="0"
+                        Grid.Column="1" />
+            </Grid>
+
             <Button Command="{Binding ShowHistory, Mode=TwoWay}"
                     Text="{x:Static constants:LabelsConstants.SHOW_HISTORY}"
                     TextColor="White"
-                    BackgroundColor="MediumSpringGreen"
+                    BackgroundColor="DodgerBlue"
                     CornerRadius="8"
                     HeightRequest="40" />
             <Button Command="{Binding AddVisit, Mode=TwoWay}"

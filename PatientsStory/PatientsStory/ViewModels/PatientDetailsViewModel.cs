@@ -140,11 +140,14 @@ namespace PatientsStory.ViewModels
 
         private async Task<VisitsListViewModel> InitVisitsListViewModel()
         {
-            var visitsListViewModel = new VisitsListViewModel();
             var visits = await App.DataController.GetVisitsAsync(Id);
-            visitsListViewModel.VisitsList = new ObservableCollection<Visit>(visits);
-            visitsListViewModel.PatientId = Id;
-            visitsListViewModel.PatientFullName = FullName;
+            var visitsListViewModel = new VisitsListViewModel
+            {
+                VisitsList = new ObservableCollection<Visit>(visits),
+                PatientId = Id,
+                PatientFullName = FullName
+            };
+
             return visitsListViewModel;
         }
     }
