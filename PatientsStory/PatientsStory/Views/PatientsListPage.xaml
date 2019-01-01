@@ -66,8 +66,7 @@
 
         <!--#region ListOfPatients -->
 
-        <StackLayout Padding="2"
-                     VerticalOptions="StartAndExpand">
+        <StackLayout VerticalOptions="StartAndExpand">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

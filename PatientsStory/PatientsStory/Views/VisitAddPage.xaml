@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PatientsStory.Views"
              xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
              xmlns:constants="clr-namespace:PatientsStory.Constants"
              x:Class="PatientsStory.Views.VisitAddPage"
@@ -20,15 +21,7 @@
 
         <!--#region TopPanel -->
 
-        <Label Text="{x:Static constants:LabelsConstants.APP_NAME}"
-               FontSize="Large"
-               TextColor="White"
-               BackgroundColor="Black"
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center"
-               HeightRequest="40"
-               HorizontalOptions="FillAndExpand"
-               VerticalOptions="Start" />
+        <views:_AppNameLabel />
 
         <!--#endregion -->
 
