@@ -1,4 +1,5 @@
-﻿using PatientsStory.Models;
+﻿using PatientsStory.Constants;
+using PatientsStory.Models;
 using Xamarin.Forms;
 
 namespace PatientsStory.ViewModels
@@ -61,8 +62,9 @@ namespace PatientsStory.ViewModels
                 {
                     var patient = new Patient(Id, FirstName, LastName, PESEL);
                     await App.DataController.SavePatientAsync(patient);
-                    await Application.Current.MainPage.DisplayAlert("Zrobione!", "Dodano/zaktualizowano pacjenta!",
-                                                                    "Ok");
+                    await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.SAVE_TITLE,
+                                                                    AlertsLabelsConstants.PATIENT_SAVE_MESSAGE,
+                                                                    AlertsLabelsConstants.OK_ANSWER);
                     await Application.Current.MainPage.Navigation.PopToRootAsync();
                 });
             }

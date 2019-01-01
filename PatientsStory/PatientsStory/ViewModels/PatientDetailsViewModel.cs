@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using PatientsStory.Constants;
 using PatientsStory.Helpers;
 using PatientsStory.Models;
 using PatientsStory.Views;
@@ -95,8 +96,10 @@ namespace PatientsStory.ViewModels
                 return new Command(async () =>
                 {
                     var answer =
-                        await Application.Current.MainPage.DisplayAlert("Usunąć?", "Czy na pewno chcesz usunąć?", "Tak",
-                                                                        "Nie");
+                        await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.DELETE_TITLE,
+                                                                        AlertsLabelsConstants.DELETE_MESSAGE,
+                                                                        AlertsLabelsConstants.YES_ANSWER,
+                                                                        AlertsLabelsConstants.NO_ANSWER);
                     if (answer)
                     {
                         var patient = await App.DataController.GetPatientAsync(Id);

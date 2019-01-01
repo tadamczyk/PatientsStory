@@ -1,4 +1,5 @@
 ﻿using System;
+using PatientsStory.Constants;
 using PatientsStory.Models;
 using Xamarin.Forms;
 
@@ -115,7 +116,9 @@ namespace PatientsStory.ViewModels
                 {
                     var visit = new Visit(Id, PatientId, DateOfVisit, Diagnose, Indications, Price);
                     await App.DataController.SaveVisitAsync(visit);
-                    await Application.Current.MainPage.DisplayAlert("Zrobione!", "Dodano/zaktualizowano wizytę!", "Ok");
+                    await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.SAVE_TITLE,
+                                                                    AlertsLabelsConstants.VISIT_SAVE_MESSAGE,
+                                                                    AlertsLabelsConstants.OK_ANSWER);
                     await Application.Current.MainPage.Navigation.PopToRootAsync();
                 });
             }
