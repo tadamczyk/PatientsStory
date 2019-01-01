@@ -1,8 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using PatientsStory.Enums;
 
 namespace PatientsStory.Helpers
 {
-    public class PatientHelper
+    public static class PatientHelper
     {
         public static string GetFirstName(string fullName)
         {
@@ -37,11 +41,17 @@ namespace PatientsStory.Helpers
             return age;
         }
 
-        public static string GetGenderFromPesel(string pesel)
+        public static GenderEnum GetGenderFromPesel(string pesel)
         {
             var genderNumber = int.Parse(pesel.Substring(9, 1));
 
-            return genderNumber % 2 == 0 ? "Kobieta" : "Mężczyzna";
+            return genderNumber % 2 == 0 ? GenderEnum.FEMALE : GenderEnum.MALE;
+        }
+
+        public static string GetGenderDescription(this GenderEnum gender)
+        {
+            return gender.GetType().GetMember(gender.ToString()).First()?.GetCustomAttribute<DescriptionAttribute>()
+                ?.Description;
         }
     }
 }

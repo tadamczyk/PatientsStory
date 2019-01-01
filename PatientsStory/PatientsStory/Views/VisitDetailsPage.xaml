@@ -4,13 +4,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
              xmlns:constants="clr-namespace:PatientsStory.Constants"
-             x:Class="PatientsStory.Views.PatientDetailsPage"
+             x:Class="PatientsStory.Views.VisitDetailsPage"
              NavigationPage.HasNavigationBar="False">
 
     <!--#region BindingContext -->
 
     <ContentPage.BindingContext>
-        <viewModels:PatientDetailsViewModel />
+        <viewModels:VisitDetailsViewModel />
     </ContentPage.BindingContext>
 
     <!--#endregion -->
@@ -29,7 +29,12 @@
                HeightRequest="40"
                HorizontalOptions="FillAndExpand"
                VerticalOptions="Start" />
-        <Label Text="{Binding FullName}"
+        <Label Text="{Binding PatientFullName}"
+               FontSize="Medium"
+               TextColor="Black"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start" />
+        <Label Text="{x:Static constants:LabelsConstants.VISIT_NAME}"
                FontSize="Medium"
                TextColor="Black"
                HorizontalOptions="CenterAndExpand"
@@ -37,7 +42,7 @@
 
         <!--#endregion -->
 
-        <!--#region FieldsOfPatient -->
+        <!--#region FieldsOfVisit -->
 
         <StackLayout Padding="10"
                      VerticalOptions="StartAndExpand">
@@ -46,80 +51,63 @@
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
+                    <RowDefinition />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Label Text="{x:Static constants:LabelsConstants.PATIENT_PESEL}"
+                <Label Text="{x:Static constants:LabelsConstants.VISIT_DATE}"
                        FontSize="Micro"
                        Grid.Row="0"
                        Grid.Column="0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
-                <Label Text="{Binding PESEL}"
+                <Label Text="{Binding DateOfVisit, StringFormat='{0:yyyy-MM-dd}'}"
                        TextColor="Black"
                        Grid.Row="0"
                        Grid.Column="1" />
-                <Label Text="{x:Static constants:LabelsConstants.PATIENT_AGE}"
+                <Label Text="{x:Static constants:LabelsConstants.VISIT_DIAGNOSE}"
                        FontSize="Micro"
                        Grid.Row="1"
                        Grid.Column="0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
-                <Label Text="{Binding Age}"
+                <Label Text="{Binding Diagnose}"
                        TextColor="Black"
                        Grid.Row="1"
                        Grid.Column="1" />
-                <Label Text="{x:Static constants:LabelsConstants.PATIENT_GENDER}"
+                <Label Text="{x:Static constants:LabelsConstants.VISIT_INDICATIONS}"
                        FontSize="Micro"
                        Grid.Row="2"
                        Grid.Column="0"
                        HorizontalOptions="Start"
                        VerticalOptions="Center" />
-                <Label Text="{Binding Gender}"
+                <Label Text="{Binding Indications}"
                        TextColor="Black"
                        Grid.Row="2"
+                       Grid.Column="1" />
+                <Label Text="{x:Static constants:LabelsConstants.VISIT_PRICE}"
+                       FontSize="Micro"
+                       Grid.Row="3"
+                       Grid.Column="0"
+                       HorizontalOptions="Start"
+                       VerticalOptions="Center" />
+                <Label Text="{Binding Price, StringFormat='{0:0.00} zł'}"
+                       TextColor="Black"
+                       Grid.Row="3"
                        Grid.Column="1" />
             </Grid>
         </StackLayout>
 
         <!--#endregion -->
 
-        <!--#region Buttons -->
+        <!--#region EditVisit -->
 
         <StackLayout VerticalOptions="End">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Button Command="{Binding EditPatient, Mode=TwoWay}"
-                        Text="{x:Static constants:ButtonsConstants.EDIT_PATIENT}"
-                        TextColor="White"
-                        BackgroundColor="Orange"
-                        CornerRadius="8"
-                        HeightRequest="40"
-                        Grid.Row="0"
-                        Grid.Column="0" />
-                <Button Command="{Binding DeletePatient, Mode=TwoWay}"
-                        Text="{x:Static constants:ButtonsConstants.DELETE_PATIENT}"
-                        TextColor="White"
-                        BackgroundColor="Crimson"
-                        CornerRadius="8"
-                        HeightRequest="40"
-                        Grid.Row="0"
-                        Grid.Column="1" />
-            </Grid>
-
-            <Button Command="{Binding ShowHistory, Mode=TwoWay}"
-                    Text="{x:Static constants:ButtonsConstants.SHOW_HISTORY}"
-                    TextColor="White"
-                    BackgroundColor="DodgerBlue"
-                    CornerRadius="8"
-                    HeightRequest="40" />
-            <Button Command="{Binding AddVisit, Mode=TwoWay}"
-                    Text="{x:Static constants:ButtonsConstants.ADD_VISIT}"
+            <Button Command="{Binding EditVisit, Mode=TwoWay}"
+                    Text="{x:Static constants:ButtonsConstants.EDIT_VISIT}"
+                    FontSize="Default"
                     TextColor="White"
                     BackgroundColor="Green" />
         </StackLayout>

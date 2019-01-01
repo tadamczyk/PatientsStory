@@ -81,7 +81,7 @@ namespace PatientsStory.ViewModels
                         FullName = _selectedPatient.FullName,
                         PESEL = _selectedPatient.PESEL,
                         Age = PatientHelper.GetAgeFromPesel(_selectedPatient.PESEL).ToString(),
-                        Gender = PatientHelper.GetGenderFromPesel(_selectedPatient.PESEL)
+                        Gender = PatientHelper.GetGenderFromPesel(_selectedPatient.PESEL).GetGenderDescription()
                     };
                     var patientDetailsPage = new PatientDetailsPage(patientDetailsViewModel);
                     await Application.Current.MainPage.Navigation.PushAsync(patientDetailsPage);

@@ -11,6 +11,7 @@
 
         public const string ADD_VISIT = "Dodaj wizytę";
         public const string SHOW_HISTORY = "Wyświetl historię";
+        public const string EDIT_VISIT = "Edytuj wizytę";
         public const string SAVE_VISIT = "Zapisz wizytę";
 
         #endregion

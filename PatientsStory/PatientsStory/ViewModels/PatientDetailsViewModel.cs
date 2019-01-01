@@ -1,5 +1,4 @@
 ﻿using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using PatientsStory.Helpers;
 using PatientsStory.Models;
 using PatientsStory.Views;
@@ -114,7 +113,13 @@ namespace PatientsStory.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var visitsListViewModel = await InitVisitsListViewModel();
+                    var visits = await App.DataController.GetVisitsAsync(Id);
+                    var visitsListViewModel = new VisitsListViewModel
+                    {
+                        VisitsList = new ObservableCollection<Visit>(visits),
+                        PatientId = Id,
+                        PatientFullName = FullName
+                    };
                     var visitsListPage = new VisitsListPage(visitsListViewModel);
                     await Application.Current.MainPage.Navigation.PushAsync(visitsListPage);
                 });
@@ -136,19 +141,6 @@ namespace PatientsStory.ViewModels
                     await Application.Current.MainPage.Navigation.PushAsync(visitAddPage);
                 });
             }
-        }
-
-        private async Task<VisitsListViewModel> InitVisitsListViewModel()
-        {
-            var visits = await App.DataController.GetVisitsAsync(Id);
-            var visitsListViewModel = new VisitsListViewModel
-            {
-                VisitsList = new ObservableCollection<Visit>(visits),
-                PatientId = Id,
-                PatientFullName = FullName
-            };
-
-            return visitsListViewModel;
         }
     }
 }

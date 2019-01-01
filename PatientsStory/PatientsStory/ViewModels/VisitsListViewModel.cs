@@ -46,7 +46,7 @@ namespace PatientsStory.ViewModels
                     return;
                 }
 
-                //SelectVisit.Execute(_selectedVisit);
+                SelectVisit.Execute(_selectedVisit);
                 _selectedVisit = null;
                 OnPropertyChanged("SelectedVisit");
             }
@@ -75,6 +75,28 @@ namespace PatientsStory.ViewModels
                     };
                     var visitAddPage = new VisitAddPage(visitAddViewModel);
                     await Application.Current.MainPage.Navigation.PushAsync(visitAddPage);
+                });
+            }
+        }
+
+        public Command SelectVisit
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var visitDetailsViewModel = new VisitDetailsViewModel
+                    {
+                        Id = _selectedVisit.Id,
+                        PatientId = _selectedVisit.PatientId,
+                        DateOfVisit = _selectedVisit.DateOfVisit,
+                        Diagnose = _selectedVisit.Diagnose,
+                        Indications = _selectedVisit.Indications,
+                        Price = _selectedVisit.Price,
+                        PatientFullName = PatientFullName
+                    };
+                    var visitDetailsPage = new VisitDetailsPage(visitDetailsViewModel);
+                    await Application.Current.MainPage.Navigation.PushAsync(visitDetailsPage);
                 });
             }
         }

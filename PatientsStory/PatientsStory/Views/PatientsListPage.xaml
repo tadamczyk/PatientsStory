@@ -15,7 +15,8 @@
 
     <!--#endregion -->
 
-    <StackLayout HorizontalOptions="FillAndExpand">
+    <StackLayout HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand">
 
         <!--#region TopPanel -->
 

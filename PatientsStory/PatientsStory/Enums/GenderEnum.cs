@@ -1,8 +1,11 @@
-﻿namespace PatientsStory.Enums
+﻿using System.ComponentModel;
+using PatientsStory.Constants;
+
+namespace PatientsStory.Enums
 {
     public enum GenderEnum
     {
-        FEMALE,
-        MALE
+        [Description(LabelsConstants.FEMALE)] FEMALE,
+        [Description(LabelsConstants.MALE)] MALE
     }
 }
