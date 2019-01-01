@@ -82,7 +82,7 @@
 
         <StackLayout VerticalOptions="End">
             <Button Command="{Binding SavePatient, Mode=TwoWay}"
-                    Text="{x:Static constants:LabelsConstants.SAVE_PATIENT}"
+                    Text="{x:Static constants:ButtonsConstants.SAVE_PATIENT}"
                     TextColor="White"
                     BackgroundColor="Green"
                     HorizontalOptions="FillAndExpand" />

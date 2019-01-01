@@ -93,7 +93,7 @@
 
         <StackLayout VerticalOptions="End">
             <Button Command="{Binding SaveVisit, Mode=TwoWay}"
-                    Text="{x:Static constants:LabelsConstants.SAVE_VISIT}"
+                    Text="{x:Static constants:ButtonsConstants.SAVE_VISIT}"
                     TextColor="White"
                     BackgroundColor="Green"
                     HorizontalOptions="FillAndExpand" />

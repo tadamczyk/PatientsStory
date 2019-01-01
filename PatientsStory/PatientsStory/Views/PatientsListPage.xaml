@@ -100,7 +100,7 @@
 
         <StackLayout VerticalOptions="End">
             <Button Command="{Binding AddPatient, Mode=TwoWay}"
-                    Text="{x:Static constants:LabelsConstants.ADD_PATIENT}"
+                    Text="{x:Static constants:ButtonsConstants.ADD_PATIENT}"
                     TextColor="White"
                     BackgroundColor="Green" />
         </StackLayout>

@@ -94,7 +94,7 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Button Command="{Binding EditPatient, Mode=TwoWay}"
-                        Text="{x:Static constants:LabelsConstants.EDIT_PATIENT}"
+                        Text="{x:Static constants:ButtonsConstants.EDIT_PATIENT}"
                         TextColor="White"
                         BackgroundColor="Orange"
                         CornerRadius="8"
@@ -102,7 +102,7 @@
                         Grid.Row="0"
                         Grid.Column="0" />
                 <Button Command="{Binding DeletePatient, Mode=TwoWay}"
-                        Text="{x:Static constants:LabelsConstants.DELETE_PATIENT}"
+                        Text="{x:Static constants:ButtonsConstants.DELETE_PATIENT}"
                         TextColor="White"
                         BackgroundColor="Crimson"
                         CornerRadius="8"
@@ -112,13 +112,13 @@
             </Grid>
 
             <Button Command="{Binding ShowHistory, Mode=TwoWay}"
-                    Text="{x:Static constants:LabelsConstants.SHOW_HISTORY}"
+                    Text="{x:Static constants:ButtonsConstants.SHOW_HISTORY}"
                     TextColor="White"
                     BackgroundColor="DodgerBlue"
                     CornerRadius="8"
                     HeightRequest="40" />
             <Button Command="{Binding AddVisit, Mode=TwoWay}"
-                    Text="{x:Static constants:LabelsConstants.ADD_VISIT}"
+                    Text="{x:Static constants:ButtonsConstants.ADD_VISIT}"
                     TextColor="White"
                     BackgroundColor="Green" />
         </StackLayout>
