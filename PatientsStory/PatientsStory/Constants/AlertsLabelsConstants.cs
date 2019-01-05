@@ -1,6 +1,6 @@
 ﻿namespace PatientsStory.Constants
 {
-    public class AlertsLabelsConstants
+    public static class AlertsLabelsConstants
     {
         #region Save
 

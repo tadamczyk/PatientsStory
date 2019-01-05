@@ -1,6 +1,6 @@
 ﻿namespace PatientsStory.Constants
 {
-    public class ButtonsConstants
+    public static class ButtonsConstants
     {
         public const string ADD_PATIENT = "Dodaj pacjenta";
         public const string DELETE_PATIENT = "Usuń pacjenta";

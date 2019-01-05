@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="App">
+    <Position X="0.5" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="DataAccess">
+    <Position X="4.017" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Constants">
+    <Position X="0.5" Y="5.724" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Enums">
+    <Position X="0.5" Y="10.971" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Helpers">
+    <Position X="2.735" Y="10.967" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Models">
+    <Position X="0.5" Y="14.924" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Validation">
+    <Position X="0.5" Y="20.112" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="ViewModels">
+    <Position X="16.484" Y="0.5" Height="0.75" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Views">
+    <Position X="16.519" Y="17.341" Height="0.75" Width="1.7" />
+  </Comment>
+  <Class Name="PatientsStory.Constants.AlertsLabelsConstants">
+    <Position X="0.5" Y="6.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAgABAAAQAIACABAAAAAAAAAAAACAAFAAAAAEAAAAAA=</HashCode>
+      <FileName>Constants\AlertsLabelsConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Constants.ButtonsConstants">
+    <Position X="3.25" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAQBAAAYAAAAAAABAAAAAAAEAAAQAA=</HashCode>
+      <FileName>Constants\ButtonsConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Constants.LabelsConstants">
+    <Position X="5.5" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAQAAAAAABCAAABUAAAAAAAAAQBAAEAAQCAAAAA=</HashCode>
+      <FileName>Constants\LabelsConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.DataAccess.DataController" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAIgCAAgAAAAAAQAACAABAAAAAA=</HashCode>
+      <FileName>DataAccess\DataController.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="PatientsStory.Helpers.PatientHelper">
+    <Position X="2.75" Y="12" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAEAAAAAgAAAAAAAAAAAAAAAAAAAAIQAAAAAACAAA=</HashCode>
+      <FileName>Helpers\PatientHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Models.Patient">
+    <Position X="0.5" Y="16" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAACAEAAAAAAAIQAAAAAAAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Models\Patient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Models.Visit">
+    <Position X="4.75" Y="16" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AACCAQAAAQAAAAAAAAAAAAAAAACAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\Visit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Validation.Behaviors.BaseValidationBehavior">
+    <Position X="3.75" Y="23.75" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAgAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\Behaviors\BaseValidationBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Validation.Behaviors.PatientNameValidationBehavior">
+    <Position X="7.25" Y="26" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\Behaviors\PatientNameValidationBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Validation.Behaviors.PatientPeselValidationBehavior">
+    <Position X="0.5" Y="26" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\Behaviors\PatientPeselValidationBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Validation.Behaviors.VisitDescriptionValidationBehavior">
+    <Position X="0.5" Y="27.5" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\Behaviors\VisitDescriptionValidationBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Validation.Behaviors.VisitPriceValidationBehavior">
+    <Position X="7.25" Y="27.5" Width="6" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\Behaviors\VisitPriceValidationBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Validation.PatternsConstants">
+    <Position X="3.75" Y="21.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAABAAACAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Validation\PatternsConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Validation.Validator">
+    <Position X="0.5" Y="21.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validation\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.ViewModels.BaseViewModel">
+    <Position X="16.5" Y="1.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\BaseViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="PatientsStory.ViewModels.PatientAddViewModel">
+    <Position X="15.25" Y="5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAEAAQAAAAAAAAAFAAAAAAAIAEAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ViewModels\PatientAddViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.ViewModels.PatientDetailsViewModel">
+    <Position X="15.25" Y="10.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACEQAAAAAAAICAAEBAAIIEAAKAEAgAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\PatientDetailsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.ViewModels.PatientsListViewModel">
+    <Position X="19.75" Y="5" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAARIAAAAgAAAAAAAAEAAAAAAAEAAgAACAAA=</HashCode>
+      <FileName>ViewModels\PatientsListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.ViewModels.VisitAddViewModel">
+    <Position X="24.75" Y="5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AgCCAQAAAQAIAAAACABQAIAIgACAAAAAAAAAQACCAAA=</HashCode>
+      <FileName>ViewModels\VisitAddViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.ViewModels.VisitDetailsViewModel">
+    <Position X="24.75" Y="10.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AgCCAQAAAQAIAAAACABQAAAIAACAAAAAAAAAQAACAAA=</HashCode>
+      <FileName>ViewModels\VisitDetailsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.ViewModels.VisitsListViewModel">
+    <Position X="19.75" Y="10.75" Width="3.5" />
+    <InheritanceLine Type="PatientsStory.ViewModels.BaseViewModel" FixedToPoint="true">
+      <Path>
+        <Point X="18.375" Y="3.305" />
+        <Point X="18.375" Y="10.375" />
+        <Point X="21.375" Y="10.375" />
+        <Point X="21.375" Y="10.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAQAAAAoACAAQAIACAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>ViewModels\VisitsListViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Views._AppNameLabel">
+    <Position X="16.5" Y="18.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\_AppNameLabel.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Views.PatientAddPage">
+    <Position X="16.5" Y="19.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PatientAddPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Views.PatientDetailsPage">
+    <Position X="20.25" Y="19.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PatientDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Views.PatientsListPage">
+    <Position X="16.5" Y="21.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\PatientsListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Views.VisitAddPage">
+    <Position X="16.5" Y="22.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\VisitAddPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Views.VisitDetailsPage">
+    <Position X="20.25" Y="22.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\VisitDetailsPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Views.VisitsListPage">
+    <Position X="20.25" Y="21.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\VisitsListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.App">
+    <Position X="0.5" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABgBAAgAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="PatientsStory.DataAccess.Interfaces.IDataController">
+    <Position X="7.5" Y="1.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAIgCAAgAAAAAAAAACAABAAAAAA=</HashCode>
+      <FileName>DataAccess\Interfaces\IDataController.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="PatientsStory.DataAccess.Interfaces.ILocalFileHelper">
+    <Position X="7.5" Y="4" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>DataAccess\Interfaces\ILocalFileHelper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="PatientsStory.Enums.GenderEnum">
+    <Position X="0.5" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Enums\GenderEnum.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
