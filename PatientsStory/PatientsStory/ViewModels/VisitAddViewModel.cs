@@ -1,6 +1,7 @@
 ﻿using System;
 using PatientsStory.Constants;
 using PatientsStory.Models;
+using PatientsStory.Validation;
 using Xamarin.Forms;
 
 namespace PatientsStory.ViewModels
@@ -114,12 +115,23 @@ namespace PatientsStory.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var visit = new Visit(Id, PatientId, DateOfVisit, Diagnose, Indications, Price);
-                    await App.DataController.SaveVisitAsync(visit);
-                    await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.SAVE_TITLE,
-                                                                    AlertsLabelsConstants.VISIT_SAVE_MESSAGE,
-                                                                    AlertsLabelsConstants.OK_ANSWER);
-                    await Application.Current.MainPage.Navigation.PopToRootAsync();
+                    if (Validator.IsValid(Diagnose, PatternsConstants.VISIT_DESCRIPTION_PATTERN) &&
+                        Validator.IsValid(Indications, PatternsConstants.VISIT_DESCRIPTION_PATTERN) &&
+                        Validator.IsValid(Price.ToString(), PatternsConstants.VISIT_PRICE_PATTERN))
+                    {
+                        var visit = new Visit(Id, PatientId, DateOfVisit, Diagnose, Indications, Price);
+                        await App.DataController.SaveVisitAsync(visit);
+                        await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.SAVE_TITLE,
+                                                                        AlertsLabelsConstants.VISIT_SAVE_MESSAGE,
+                                                                        AlertsLabelsConstants.OK_ANSWER);
+                        await Application.Current.MainPage.Navigation.PopToRootAsync();
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.ERROR_TITLE,
+                                                                        AlertsLabelsConstants.ERROR_MESSAGE,
+                                                                        AlertsLabelsConstants.OK_ANSWER);
+                    }
                 });
             }
         }

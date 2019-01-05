@@ -4,6 +4,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:PatientsStory.Views"
              xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
+             xmlns:behaviors="clr-namespace:PatientsStory.Validation.Behaviors"
              xmlns:constants="clr-namespace:PatientsStory.Constants"
              x:Class="PatientsStory.Views.VisitAddPage"
              NavigationPage.HasNavigationBar="False">
@@ -58,7 +59,11 @@
                 <Entry Text="{Binding Diagnose}"
                        Placeholder="np. Grypa"
                        Grid.Row="1"
-                       Grid.Column="1" />
+                       Grid.Column="1">
+                    <Entry.Behaviors>
+                        <behaviors:VisitDescriptionValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
                 <Label Text="{x:Static constants:LabelsConstants.VISIT_INDICATIONS}"
                        Grid.Row="2"
                        Grid.Column="0"
@@ -67,7 +72,11 @@
                 <Entry Text="{Binding Indications}"
                        Placeholder="np. Brak"
                        Grid.Row="2"
-                       Grid.Column="1" />
+                       Grid.Column="1">
+                    <Entry.Behaviors>
+                        <behaviors:VisitDescriptionValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
                 <Label Text="{x:Static constants:LabelsConstants.VISIT_PRICE}"
                        Grid.Row="3"
                        Grid.Column="0"
@@ -76,7 +85,11 @@
                 <Entry Text="{Binding Price}"
                        Placeholder="np. 100"
                        Grid.Row="3"
-                       Grid.Column="1" />
+                       Grid.Column="1">
+                    <Entry.Behaviors>
+                        <behaviors:VisitPriceValidationBehavior />
+                    </Entry.Behaviors>
+                </Entry>
             </Grid>
         </StackLayout>
 

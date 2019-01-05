@@ -1,5 +1,6 @@
 ﻿using PatientsStory.Constants;
 using PatientsStory.Models;
+using PatientsStory.Validation;
 using Xamarin.Forms;
 
 namespace PatientsStory.ViewModels
@@ -60,12 +61,23 @@ namespace PatientsStory.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var patient = new Patient(Id, FirstName, LastName, PESEL);
-                    await App.DataController.SavePatientAsync(patient);
-                    await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.SAVE_TITLE,
-                                                                    AlertsLabelsConstants.PATIENT_SAVE_MESSAGE,
-                                                                    AlertsLabelsConstants.OK_ANSWER);
-                    await Application.Current.MainPage.Navigation.PopToRootAsync();
+                    if (Validator.IsValid(FirstName, PatternsConstants.PATIENT_NAME_PATTERN) &&
+                        Validator.IsValid(LastName, PatternsConstants.PATIENT_NAME_PATTERN) &&
+                        Validator.IsValid(PESEL, PatternsConstants.PATIENT_PESEL_PATTERN))
+                    {
+                        var patient = new Patient(Id, FirstName, LastName, PESEL);
+                        await App.DataController.SavePatientAsync(patient);
+                        await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.SAVE_TITLE,
+                                                                        AlertsLabelsConstants.PATIENT_SAVE_MESSAGE,
+                                                                        AlertsLabelsConstants.OK_ANSWER);
+                        await Application.Current.MainPage.Navigation.PopToRootAsync();
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.ERROR_TITLE,
+                                                                        AlertsLabelsConstants.ERROR_MESSAGE,
+                                                                        AlertsLabelsConstants.OK_ANSWER);
+                    }
                 });
             }
         }
