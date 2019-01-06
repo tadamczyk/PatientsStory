@@ -25,7 +25,7 @@
     <Position X="16.484" Y="0.5" Height="0.75" Width="1.7" />
   </Comment>
   <Comment CommentText="Views">
-    <Position X="16.519" Y="17.341" Height="0.75" Width="1.7" />
+    <Position X="16.519" Y="16.091" Height="0.75" Width="1.7" />
   </Comment>
   <Class Name="PatientsStory.Constants.AlertsLabelsConstants">
     <Position X="0.5" Y="6.75" Width="2.5" />
@@ -77,52 +77,10 @@
       <FileName>Models\Visit.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PatientsStory.Validation.Behaviors.BaseValidationBehavior">
-    <Position X="3.75" Y="23.75" Width="6" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAgAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Validation\Behaviors\BaseValidationBehavior.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PatientsStory.Validation.Behaviors.PatientNameValidationBehavior">
-    <Position X="7.25" Y="26" Width="6" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Validation\Behaviors\PatientNameValidationBehavior.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PatientsStory.Validation.Behaviors.PatientPeselValidationBehavior">
-    <Position X="0.5" Y="26" Width="6" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Validation\Behaviors\PatientPeselValidationBehavior.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PatientsStory.Validation.Behaviors.VisitDescriptionValidationBehavior">
-    <Position X="0.5" Y="27.5" Width="6" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Validation\Behaviors\VisitDescriptionValidationBehavior.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PatientsStory.Validation.Behaviors.VisitPriceValidationBehavior">
-    <Position X="7.25" Y="27.5" Width="6" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Validation\Behaviors\VisitPriceValidationBehavior.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PatientsStory.Validation.PatternsConstants">
-    <Position X="3.75" Y="21.25" Width="2.75" />
-    <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAABAAACAAAAAAAAAAAAAAAgAA=</HashCode>
-      <FileName>Validation\PatternsConstants.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="PatientsStory.Validation.Validator">
-    <Position X="0.5" Y="21.25" Width="3" />
+    <Position X="0.5" Y="21.25" Width="6" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAQAAEgAAAARAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Validation\Validator.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -185,49 +143,49 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PatientsStory.Views._AppNameLabel">
-    <Position X="16.5" Y="18.25" Width="1.75" />
+    <Position X="16.5" Y="17" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\_AppNameLabel.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PatientsStory.Views.PatientAddPage">
-    <Position X="16.5" Y="19.75" Width="3.5" />
+    <Position X="16.5" Y="18.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\PatientAddPage.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PatientsStory.Views.PatientDetailsPage">
-    <Position X="20.25" Y="19.75" Width="3.75" />
+    <Position X="20.25" Y="18.5" Width="3.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\PatientDetailsPage.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PatientsStory.Views.PatientsListPage">
-    <Position X="16.5" Y="21.25" Width="3.5" />
+    <Position X="16.5" Y="20" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\PatientsListPage.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PatientsStory.Views.VisitAddPage">
-    <Position X="16.5" Y="22.75" Width="3.25" />
+    <Position X="16.5" Y="21.5" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\VisitAddPage.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PatientsStory.Views.VisitDetailsPage">
-    <Position X="20.25" Y="22.75" Width="3.5" />
+    <Position X="20.25" Y="21.5" Width="3.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\VisitDetailsPage.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PatientsStory.Views.VisitsListPage">
-    <Position X="20.25" Y="21.25" Width="3.25" />
+    <Position X="20.25" Y="20" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Views\VisitsListPage.xaml.cs</FileName>
@@ -238,6 +196,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAABgBAAgAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PatientsStory.Constants.ValidationPatternsConstants">
+    <Position X="8" Y="6.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAABAAACAAAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Constants\ValidationPatternsConstants.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="PatientsStory.DataAccess.Interfaces.IDataController">
