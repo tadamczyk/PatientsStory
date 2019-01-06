@@ -2,7 +2,7 @@
 {
     public static class AlertsLabelsConstants
     {
-        #region Save
+        #region Save Labels
 
         public const string SAVE_TITLE = "Zrobione!";
         public const string PATIENT_SAVE_MESSAGE = "Dodano/zaktualizowano pacjenta!";
@@ -10,14 +10,14 @@
 
         #endregion
 
-        #region Delete
+        #region Delete Labels
 
         public const string DELETE_TITLE = "Usunąć?";
         public const string DELETE_MESSAGE = "Czy na pewno chcesz usunąć?";
 
         #endregion
 
-        #region Error
+        #region Error Labels
 
         public const string ERROR_TITLE = "Błąd!";
         public const string ERROR_MESSAGE = "Popraw błędne dane!";

@@ -62,9 +62,10 @@ namespace PatientsStory.ViewModels
             {
                 return new Command(async () =>
                 {
-                    if (Validator.IsValid(FirstName, PatternsConstants.PATIENT_NAME_PATTERN) &&
-                        Validator.IsValid(LastName, PatternsConstants.PATIENT_NAME_PATTERN) &&
-                        Validator.IsValid(PESEL, PatternsConstants.PATIENT_PESEL_PATTERN))
+                    if (Validator.IsValid(FirstName, ValidationPatternsConstants.PATIENT_NAME_PATTERN) &&
+                        Validator.IsValid(LastName, ValidationPatternsConstants.PATIENT_NAME_PATTERN) &&
+                        Validator.IsValid(PESEL, ValidationPatternsConstants.PATIENT_PESEL_PATTERN) &&
+                        !await Validator.IsPeselExistsAsync(Id, PESEL))
                     {
                         var patient = new Patient(Id, FirstName, LastName, PESEL);
                         await App.DataController.SavePatientAsync(patient);

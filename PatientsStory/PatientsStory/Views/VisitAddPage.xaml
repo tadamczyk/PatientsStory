@@ -2,10 +2,10 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:constants="clr-namespace:PatientsStory.Constants"
+             xmlns:validation="clr-namespace:PatientsStory.Validation"
              xmlns:views="clr-namespace:PatientsStory.Views"
              xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
-             xmlns:behaviors="clr-namespace:PatientsStory.Validation.Behaviors"
-             xmlns:constants="clr-namespace:PatientsStory.Constants"
              x:Class="PatientsStory.Views.VisitAddPage"
              NavigationPage.HasNavigationBar="False">
 
@@ -61,7 +61,8 @@
                        Grid.Row="1"
                        Grid.Column="1">
                     <Entry.Behaviors>
-                        <behaviors:VisitDescriptionValidationBehavior />
+                        <validation:Validator
+                            Pattern="{x:Static constants:ValidationPatternsConstants.VISIT_DESCRIPTION_PATTERN}" />
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="{x:Static constants:LabelsConstants.VISIT_INDICATIONS}"
@@ -74,7 +75,8 @@
                        Grid.Row="2"
                        Grid.Column="1">
                     <Entry.Behaviors>
-                        <behaviors:VisitDescriptionValidationBehavior />
+                        <validation:Validator
+                            Pattern="{x:Static constants:ValidationPatternsConstants.VISIT_DESCRIPTION_PATTERN}" />
                     </Entry.Behaviors>
                 </Entry>
                 <Label Text="{x:Static constants:LabelsConstants.VISIT_PRICE}"
@@ -87,7 +89,8 @@
                        Grid.Row="3"
                        Grid.Column="1">
                     <Entry.Behaviors>
-                        <behaviors:VisitPriceValidationBehavior />
+                        <validation:Validator
+                            Pattern="{x:Static constants:ValidationPatternsConstants.VISIT_PRICE_PATTERN}" />
                     </Entry.Behaviors>
                 </Entry>
             </Grid>

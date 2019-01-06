@@ -2,10 +2,10 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:constants="clr-namespace:PatientsStory.Constants"
+             xmlns:validation="clr-namespace:PatientsStory.Validation"
              xmlns:views="clr-namespace:PatientsStory.Views"
              xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
-             xmlns:behaviors="clr-namespace:PatientsStory.Validation.Behaviors"
-             xmlns:constants="clr-namespace:PatientsStory.Constants"
              x:Class="PatientsStory.Views.PatientAddPage"
              NavigationPage.HasNavigationBar="False">
 
@@ -50,8 +50,16 @@
                        Grid.Row="0"
                        Grid.Column="1">
                     <Entry.Behaviors>
-                        <behaviors:PatientNameValidationBehavior />
+                        <validation:Validator
+                            Pattern="{x:Static constants:ValidationPatternsConstants.PATIENT_NAME_PATTERN}" />
                     </Entry.Behaviors>
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>CapitalizeWord,Suggestions</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
                 </Entry>
                 <Label Text="{x:Static constants:LabelsConstants.PATIENT_LASTNAME}"
                        Grid.Row="1"
@@ -63,8 +71,16 @@
                        Grid.Row="1"
                        Grid.Column="1">
                     <Entry.Behaviors>
-                        <behaviors:PatientNameValidationBehavior />
+                        <validation:Validator
+                            Pattern="{x:Static constants:ValidationPatternsConstants.PATIENT_NAME_PATTERN}" />
                     </Entry.Behaviors>
+                    <Entry.Keyboard>
+                        <Keyboard x:FactoryMethod="Create">
+                            <x:Arguments>
+                                <KeyboardFlags>CapitalizeWord,Suggestions</KeyboardFlags>
+                            </x:Arguments>
+                        </Keyboard>
+                    </Entry.Keyboard>
                 </Entry>
                 <Label Text="{x:Static constants:LabelsConstants.PATIENT_PESEL}"
                        Grid.Row="2"
@@ -74,9 +90,11 @@
                 <Entry Text="{Binding PESEL}"
                        Placeholder="np. 90010112345"
                        Grid.Row="2"
-                       Grid.Column="1">
+                       Grid.Column="1"
+                       Keyboard="Numeric">
                     <Entry.Behaviors>
-                        <behaviors:PatientPeselValidationBehavior />
+                        <validation:Validator
+                            Pattern="{x:Static constants:ValidationPatternsConstants.PATIENT_PESEL_PATTERN}" />
                     </Entry.Behaviors>
                 </Entry>
             </Grid>
