@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using PatientsStory.Constants;
 using PatientsStory.Models;
 using PatientsStory.Validation;
@@ -117,7 +118,8 @@ namespace PatientsStory.ViewModels
                 {
                     if (Validator.IsValid(Diagnose, PatternsConstants.VISIT_DESCRIPTION_PATTERN) &&
                         Validator.IsValid(Indications, PatternsConstants.VISIT_DESCRIPTION_PATTERN) &&
-                        Validator.IsValid(Price.ToString(), PatternsConstants.VISIT_PRICE_PATTERN))
+                        Validator.IsValid(Price.ToString(CultureInfo.InvariantCulture),
+                                          PatternsConstants.VISIT_PRICE_PATTERN))
                     {
                         var visit = new Visit(Id, PatientId, DateOfVisit, Diagnose, Indications, Price);
                         await App.DataController.SaveVisitAsync(visit);

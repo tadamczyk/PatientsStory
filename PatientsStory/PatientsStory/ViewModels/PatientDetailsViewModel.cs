@@ -104,7 +104,8 @@ namespace PatientsStory.ViewModels
                     {
                         var patient = await App.DataController.GetPatientAsync(Id);
                         await App.DataController.DeletePatientAsync(patient);
-                        await Application.Current.MainPage.Navigation.PopAsync();
+                        Application.Current.MainPage =
+                            new NavigationPage(new PatientsListPage(new PatientsListViewModel()));
                     }
                 });
             }

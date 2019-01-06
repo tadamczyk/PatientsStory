@@ -2,6 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:views="clr-namespace:PatientsStory.Views"
              xmlns:viewModels="clr-namespace:PatientsStory.ViewModels"
              xmlns:constants="clr-namespace:PatientsStory.Constants"
              x:Class="PatientsStory.Views.PatientsListPage"
@@ -20,47 +21,7 @@
 
         <!--#region TopPanel -->
 
-        <Grid BackgroundColor="Black">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5" />
-                <ColumnDefinition Width="Auto" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="1" />
-            </Grid.RowDefinitions>
-            <Image BackgroundColor="Black"
-                   Grid.Row="1"
-                   Grid.Column="1"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="Center">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding RefreshCommand}" />
-                </Image.GestureRecognizers>
-                <Image.Source>
-                    <OnPlatform x:TypeArguments="ImageSource">
-                        <OnPlatform.WinPhone>
-                            <FileImageSource File="Assets/refresh.png" />
-                        </OnPlatform.WinPhone>
-                        <OnPlatform.Android>
-                            <FileImageSource File="refresh.png" />
-                        </OnPlatform.Android>
-                    </OnPlatform>
-                </Image.Source>
-            </Image>
-            <Label Text="{x:Static constants:LabelsConstants.APP_NAME}"
-                   FontSize="Large"
-                   TextColor="White"
-                   BackgroundColor="Black"
-                   Grid.Row="1"
-                   Grid.Column="2"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"
-                   HorizontalOptions="FillAndExpand"
-                   VerticalOptions="Center" />
-        </Grid>
+        <views:_AppNameLabel />
 
         <!--#endregion -->
 

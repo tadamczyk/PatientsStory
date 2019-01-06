@@ -1,6 +1,7 @@
 ﻿using PatientsStory.Constants;
 using PatientsStory.Models;
 using PatientsStory.Validation;
+using PatientsStory.Views;
 using Xamarin.Forms;
 
 namespace PatientsStory.ViewModels
@@ -70,7 +71,8 @@ namespace PatientsStory.ViewModels
                         await Application.Current.MainPage.DisplayAlert(AlertsLabelsConstants.SAVE_TITLE,
                                                                         AlertsLabelsConstants.PATIENT_SAVE_MESSAGE,
                                                                         AlertsLabelsConstants.OK_ANSWER);
-                        await Application.Current.MainPage.Navigation.PopToRootAsync();
+                        Application.Current.MainPage =
+                            new NavigationPage(new PatientsListPage(new PatientsListViewModel()));
                     }
                     else
                     {
